@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 - JavaSript - Imelda</title>
+</head>
+<body>
+    <h1>Tugas Pertemuan 2</h1>
+    <h2>Imelda Mahendro Putri - 2602291166</h2>
+    <p>Binus Online Learning University</p
+    <p>FWD2 - Pemrograman JavaScript</p>
+<table border="1px black;" style="margin:2px">
+    <thead>
+    <tr>
+        <th>Nama Pegawai</th>
+        <th>Umur (tahun)</th>
+        <th>Jabatan</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Dodi Prayodi</td>
+        <td style="text-align:center;">25</td>
+        <td>Manajer</td>
+        <td>Menikah</td>
+    </tr>
+    </tbody>
+    <tfoot>
+        <td colspan="3">Total Gaji</td>
+        <td id="total_gaji">0</td>
+    </tfoot>
+</table>
+
+<script>
+    const pegawai = [nama = "Dodi Prayodi", umur = 25, jabatan = "Manajer", status = "Menikah"];
+    let gaji_pokok
+    
+    if(jabatan == "Manajer")
+        gaji_pokok = 15000000
+    else if(jabatan =="Asisten Manajer")
+        gaji_pokok = 10000000
+    else if(jabatan == "staff") gaji_pokok = 5000000
+    else gaji_pokok = 0
+
+    let tunjangan_jabatan = 0.15 * gaji_pokok;
+    let BPJS = 0.1 * gaji_pokok;
+    let tunjangan_keluarga = 0.2 * gaji_pokok;
+    let total_gaji = gaji_pokok + tunjangan_jabatan + BPJS + tunjangan_keluarga;
+
+    document.write(
+        "Berikut adalah data pegawai PT Sinar Jaya Abadi:" +
+        "<br>Nama Pegawai: " + nama +
+        "<br>Umur: " + umur +
+        "<br>Jabatan: " + jabatan +
+        "<br>Status: " + status +
+        "<br>Gaji Pokok: " + gaji_pokok +
+        "<br>Total Gaji setelah tunjangan jabatan + BPJS + tunjangan keluarga: " + total_gaji
+    );
+
+    const totalgaji = document.getElementById("total_gaji");
+    totalgaji.textContent = total_gaji;
+</script>
+</body>
+</html>
